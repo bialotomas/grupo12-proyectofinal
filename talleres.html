@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CulturalHub - Talleres</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#faf5ff',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7c3aed'
+                        },
+                        secondary: {
+                            500: '#ec4899',
+                            600: '#db2777'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="js/main.js"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-sm border-b sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <span class="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                            CulturalHub
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-purple-600 transition-colors">Inicio</a>
+                    <a href="sobre-nosotros.html" class="text-gray-700 hover:text-purple-600 transition-colors">Sobre Nosotros</a>
+                    <a href="eventos.html" class="text-gray-700 hover:text-purple-600 transition-colors">Eventos</a>
+                    <a href="talleres.html" class="text-purple-600">Talleres</a>
+                </div>
+                <!-- Mobile menu button -->
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 py-2 space-y-2">
+                <a href="index.html" class="block py-2 text-gray-700">Inicio</a>
+                <a href="sobre-nosotros.html" class="block py-2 text-gray-700">Sobre Nosotros</a>
+                <a href="eventos.html" class="block py-2 text-gray-700">Eventos</a>
+                <a href="talleres.html" class="block py-2 text-purple-600">Talleres</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Header -->
+        <section class="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Talleres Creativos</h1>
+                    <p class="text-xl text-purple-100 max-w-3xl mx-auto">
+                        Desarrolla nuevas habilidades con instructores expertos en un ambiente colaborativo y creativo
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filters -->
+        <section class="py-8 bg-white border-b">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row gap-4 items-center">
+                    <div class="flex-1 relative">
+                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        <input type="text" placeholder="Buscar talleres..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    </div>
+                    <select class="w-full md:w-48 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                        <option>Categoría</option>
+                        <option>Fotografía</option>
+                        <option>Pintura</option>
+                        <option>Música</option>
+                        <option>Literatura</option>
+                        <option>Danza</option>
+                        <option>Arte Digital</option>
+                    </select>
+                    <select class="w-full md:w-48 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                        <option>Nivel</option>
+                        <option>Principiante</option>
+                        <option>Intermedio</option>
+                        <option>Avanzado</option>
+                    </select>
+                    <select class="w-full md:w-48 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                        <option>Duración</option>
+                        <option>1-4 semanas</option>
+                        <option>5-8 semanas</option>
+                        <option>9+ semanas</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Workshops -->
+        <section class="py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-8">Talleres Destacados</h2>
+                <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                    <!-- Featured Workshop 1 -->
+                    <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-camera text-purple-600"></i>
+                                    <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">Fotografía</span>
+                                    <span class="border border-gray-300 text-gray-700 px-2 py-1 rounded text-sm">Principiante</span>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-2xl font-bold text-purple-600">$150</div>
+                                    <div class="text-sm text-gray-500 line-through">$200</div>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Fotografía Urbana para Principiantes</h3>
+                            <p class="text-gray-600 mb-4">Aprende a capturar la esencia de la ciudad con técnicas básicas de fotografía callejera</p>
+                            
+                            <!-- Instructor -->
+                            <div class="flex items-center space-x-4 mb-4">
+                                <div class="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white font-semibold">
+                                    AG
+                                </div>
+                                <div>
+                                    <p class="font-medium">Ana García</p>
+                                    <div class="flex items-center space-x-2 text-sm text-gray-600">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                            <span>4.9</span>
+                                        </div>
+                                        <span>•</span>
+                                        <span>8 años experiencia</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Details -->
+                            <div class="grid grid-cols-2 gap-4 text-sm text-gray-600 mb-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar mr-2"></i>
+                                    <span>4 semanas</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-clock mr-2"></i>
+                                    <span>8 sesiones</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-users mr-2"></i>
+                                    <span>12/15 inscritos</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-book mr-2"></i>
+                                    <span>Sáb 10:00-12:00</span>
+                                </div>
+                            </div>
+
+                            <!-- Skills -->
+                            <div class="mb-4">
+                                <p class="text-sm font-medium text-gray-900 mb-2">Lo que aprenderás:</p>
+                                <div class="flex flex-wrap gap-1">
+                                    <span class="border border-gray-300 text-gray-700 px-2 py-1 rounded text-xs">Composición</span>
+                                    <span class="border border-gray-300 text-gray-700 px-2 py-1 rounded text-xs">Iluminación natural</span>
+                                    <span class="border border-gray-300 text-gray-700 px-2 py-1 rounded text-xs">Edición básica</span>
+                                    <span class="border border-gray-300 text-gray-700 px-2 py-1 rounded text-xs">+1 más</span>
+                                </div>
+                            </div>
+
+                            <button onclick="enrollWorkshop()" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all">
+                                Inscribirse Ahora
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Featured Workshop 2 -->
+                    <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-palette text-purple-600"></i>
+                                    <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">Pintura</span>
+                                    <span class="border border-gray-300 text-gray-700 px-2 py-1 rounded text-sm">Intermedio</span>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-2xl font-bold text-purple-600">$220</div>
+                                    <div class="text-sm text-gray-500 line-through">$280</div>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Pintura Acrílica Contemporánea</h3>
+                            <p class="text-gray-600 mb-4">Explora técnicas modernas de pintura acrílica y desarrolla tu estilo personal</p>
+                            
+                            <!-- Instructor -->
+                            <div class="flex items-center space-x-4 mb-4">
+                                <div class="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white font-semibold">
+                                    CM
+                                </div>
+                                <div>
+                                    <p class="font-medium">Carlos Mendoza</p>
+                                    <div class="flex items-center space-x-2 text-sm text-gray-600">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                            <span>4.8</span>
+                                        </div>
+                                        <span>•</span>
+                                        <span>12 años experiencia</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Details -->
+                            <div class="grid grid-cols-2 gap-4 text-sm text-gray-600 mb-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar mr-2"></i>
+                                    <span>6 semanas</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-clock mr-2"></i>
+                                    <span>12 sesiones</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-users mr-2"></i>
+                                    <span>8/12 inscritos</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-book mr-2"></i>
+                                    <span>Mar-Jue 18:00-20:00</span>
+                                </div>
+                            </div>
+
+                            <!-- Skills -->
+                            <div class="mb-4">
+                                <p class="text-sm font-medium text-gray-900 mb-2">Lo que aprenderás:</p>
+                                <div class="flex flex-wrap gap-1">
+                                    <span class="border border-gray-300 text-gray-700 px-2 py-1 rounded text-xs">Técnicas mixtas</span>
+                                    <span class="border border-gray-300 text-gray-700 px-2 py-1 rounded text-xs">Color y composición</span>
+                                    <span class="border border-gray-300 text-gray-700 px-2 py-1 rounded text-xs">Estilo personal</span>
+                                    <span class="border border-gray-300 text-gray-700 px-2 py-1 rounded text-xs">+1 más</span>
+                                </div>
+                            </div>
+
+                            <button onclick="enrollWorkshop()" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all">
+                                Inscribirse Ahora
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- All Workshops -->
+        <section class="py-12 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-8">Todos los Talleres</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Workshop Card 1 -->
+                    <div class="bg-white border border-gray-200 rounded-xl hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-music text-purple-600"></i>
+                                    <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-xs">Música</span>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-lg font-bold text-purple-600">$180</div>
+                                    <div class="text-xs text-gray-500 line-through">$230</div>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-2">Producción Musical Digital</h3>
+                            <p class="text-sm text-gray-600 mb-4">Crea tus propias pistas usando software profesional</p>
+                            
+                            <!-- Instructor -->
+                            <div class="flex items-center space-x-3 mb-3">
+                                <div class="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white text-xs font-semibold">
+                                    DL
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium">DJ Luna</p>
+                                    <div class="flex items-center text-xs text-gray-600">
+                                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                        <span>4.7</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Details -->
+                            <div class="space-y-1 text-xs text-gray-600 mb-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar mr-2"></i>
+                                    <span>5 semanas • 10 sesiones</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-users mr-2"></i>
+                                    <span>7/10 inscritos</span>
+                                </div>
+                            </div>
+
+                            <span class="border border-gray-300 text-gray-700 px-2 py-1 rounded text-xs mb-3 inline-block">Principiante</span>
+
+                            <button onclick="enrollWorkshop()" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all text-sm">
+                                Ver Detalles
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Workshop Card 2 -->
+                    <div class="bg-white border border-gray-200 rounded-xl hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-pen-fancy text-purple-600"></i>
+                                    <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-xs">Literatura</span>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-lg font-bold text-purple-600">$200</div>
+                                    <div class="text-xs text-gray-500 line-through">$250</div>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-2">Escritura Creativa y Narrativa</h3>
+                            <p class="text-sm text-gray-600 mb-4">Desarrolla tu voz como escritor</p>
+                            
+                            <!-- Instructor -->
+                            <div class="flex items-center space-x-3 mb-3">
+                                <div class="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white text-xs font-semibold">
+                                    MF
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium">María Fernández</p>
+                                    <div class="flex items-center text-xs text-gray-600">
+                                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                        <span>4.9</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Details -->
+                            <div class="space-y-1 text-xs text-gray-600 mb-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar mr-2"></i>
+                                    <span>8 semanas • 16 sesiones</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-users mr-2"></i>
+                                    <span>15/20 inscritos</span>
+                                </div>
+                            </div>
+
+                            <span class="border border-gray-300 text-gray-700 px-2 py-1 rounded text-xs mb-3 inline-block">Todos los niveles</span>
+
+                            <button onclick="enrollWorkshop()" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all text-sm">
+                                Ver Detalles
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Workshop Card 3 -->
+                    <div class="bg-white border border-gray-200 rounded-xl hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-running text-purple-600"></i>
+                                    <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-xs">Danza</span>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-lg font-bold text-purple-600">$160</div>
+                                    <div class="text-xs text-gray-500 line-through">$200</div>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-2">Danza Contemporánea</h3>
+                            <p class="text-sm text-gray-600 mb-4">Explora el movimiento corporal y la expresión</p>
+                            
+                            <!-- Instructor -->
+                            <div class="flex items-center space-x-3 mb-3">
+                                <div class="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white text-xs font-semibold">
+                                    RS
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium">Roberto Silva</p>
+                                    <div class="flex items-center text-xs text-gray-600">
+                                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                        <span>4.6</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Details -->
+                            <div class="space-y-1 text-xs text-gray-600 mb-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar mr-2"></i>
+                                    <span>6 semanas • 18 sesiones</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-users mr-2"></i>
+                                    <span>10/16 inscritos</span>
+                                </div>
+                            </div>
+
+                            <span class="border border-gray-300 text-gray-700 px-2 py-1 rounded text-xs mb-3 inline-block">Principiante</span>
+
+                            <button onclick="enrollWorkshop()" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all text-sm">
+                                Ver Detalles
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Workshop Card 4 -->
+                    <div class="bg-white border border-gray-200 rounded-xl hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-laptop text-purple-600"></i>
+                                    <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-xs">Arte Digital</span>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-lg font-bold text-purple-600">$250</div>
+                                    <div class="text-xs text-gray-500 line-through">$300</div>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-2">Arte Digital y NFTs</h3>
+                            <p class="text-sm text-gray-600 mb-4">Aprende a crear arte digital y entiende los NFTs</p>
+                            
+                            <!-- Instructor -->
+                            <div class="flex items-center space-x-3 mb-3">
+                                <div class="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white text-xs font-semibold">
+                                    AC
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium">Alex Chen</p>
+                                    <div class="flex items-center text-xs text-gray-600">
+                                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                        <span>4.8</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Details -->
+                            <div class="space-y-1 text-xs text-gray-600 mb-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar mr-2"></i>
+                                    <span>4 semanas • 8 sesiones</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-users mr-2"></i>
+                                    <span>9/12 inscritos</span>
+                                </div>
+                            </div>
+
+                            <span class="border border-gray-300 text-gray-700 px-2 py-1 rounded text-xs mb-3 inline-block">Intermedio</span>
+
+                            <button onclick="enrollWorkshop()" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all text-sm">
+                                Ver Detalles
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Workshop Card 5 -->
+                    <div class="bg-white border border-gray-200 rounded-xl hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-theater-masks text-purple-600"></i>
+                                    <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-xs">Teatro</span>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-lg font-bold text-purple-600">$140</div>
+                                    <div class="text-xs text-gray-500 line-through">$180</div>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-2">Actuación y Expresión</h3>
+                            <p class="text-sm text-gray-600 mb-4">Desarrolla tus habilidades actorales</p>
+                            
+                            <!-- Instructor -->
+                            <div class="flex items-center space-x-3 mb-3">
+                                <div class="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white text-xs font-semibold">
+                                    LM
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium">Laura Morales</p>
+                                    <div class="flex items-center text-xs text-gray-600">
+                                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                        <span>4.7</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Details -->
+                            <div class="space-y-1 text-xs text-gray-600 mb-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar mr-2"></i>
+                                    <span>5 semanas • 15 sesiones</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-users mr-2"></i>
+                                    <span>6/14 inscritos</span>
+                                </div>
+                            </div>
+
+                            <span class="border border-gray-300 text-gray-700 px-2 py-1 rounded text-xs mb-3 inline-block">Principiante</span>
+
+                            <button onclick="enrollWorkshop()" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all text-sm">
+                                Ver Detalles
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Workshop Card 6 -->
+                    <!-- Workshop Cards -->
+                    <!-- ... (rest of the workshop cards) ... -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="py-16 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">¿Por Qué Elegir Nuestros Talleres?</h2>
+                    <p class="text-xl text-purple-100">
+                        Ofrecemos una experiencia de aprendizaje única diseñada para jóvenes creativos
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-users text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Grupos Pequeños</h3>
+                        <p class="text-purple-100">Máximo 20 estudiantes por taller para atención personalizada</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-star text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Instructores Expertos</h3>
+                        <p class="text-purple-100">Profesionales activos en sus campos con años de experiencia</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-certificate text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Certificación</h3>
+                        <p class="text-purple-100">Recibe un certificado al completar exitosamente el taller</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Email Collection Modal -->
+    <div id="email-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-md w-full">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <h2 class="text-2xl font-bold text-gray-900">Inscripción al Taller</h2>
+                    <button onclick="closeEmailModal()" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                
+                <form id="email-form" onsubmit="handleEmailSubmit(event)" class="space-y-4">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                            placeholder="tu@email.com">
+                    </div>
+                    <div class="flex gap-4">
+                        <button type="button" onclick="closeEmailModal()" 
+                            class="flex-1 border border-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-50">
+                            Cancelar
+                        </button>
+                        <button type="submit" 
+                            class="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700">
+                            Enviar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="mb-4">
+                        <span class="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                            CulturalHub
+                        </span>
+                    </div>
+                    <p class="text-gray-400">El centro cultural más vibrante para jóvenes creativos</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Navegación</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="eventos.html" class="hover:text-white transition-colors">Eventos</a></li>
+                        <li><a href="talleres.html" class="hover:text-white transition-colors">Talleres</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Galería</a></li>
+                        <li><a href="eventos.html" class="hover:text-white transition-colors">Tickets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Información</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="sobre-nosotros.html" class="hover:text-white transition-colors">Sobre Nosotros</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contacto</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Accesibilidad</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Contacto</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <p>Av. Cultura 123</p>
+                        <p>Centro Histórico, CDMX</p>
+                        <p>Tel: (55) 1234-5678</p>
+                        <p>info@culturalhub.mx</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 CulturalHub. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        function enrollWorkshop() {
+            const modal = document.getElementById('email-modal');
+            modal.classList.remove('hidden');
+        }
+
+        function closeEmailModal() {
+            const modal = document.getElementById('email-modal');
+            modal.classList.add('hidden');
+            // Reset form
+            document.getElementById('email-form').reset();
+        }
+
+        function handleEmailSubmit(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            
+            // Basic email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Por favor, ingresa un correo electrónico válido.');
+                return;
+            }
+
+            // Simulate sending email
+            setTimeout(() => {
+                closeEmailModal();
+                alert('¡Gracias por tu interés! Te hemos enviado un correo con los detalles de inscripción.');
+            }, 1000);
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CulturalHub - Compra Exitosa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#faf5ff',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7c3aed'
+                        },
+                        secondary: {
+                            500: '#ec4899',
+                            600: '#db2777'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-sm border-b sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <span class="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                            CulturalHub
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-purple-600 transition-colors">Inicio</a>
+                    <a href="sobre-nosotros.html" class="text-gray-700 hover:text-purple-600 transition-colors">Sobre Nosotros</a>
+                    <a href="eventos.html" class="text-gray-700 hover:text-purple-600 transition-colors">Eventos</a>
+                    <a href="talleres.html" class="text-gray-700 hover:text-purple-600 transition-colors">Talleres</a>
+                    <a href="eventos.html" class="text-purple-600">Tickets</a>
+                </div>
+                <!-- Mobile menu button -->
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 py-2 space-y-2">
+                <a href="index.html" class="block py-2 text-gray-700">Inicio</a>
+                <a href="sobre-nosotros.html" class="block py-2 text-gray-700">Sobre Nosotros</a>
+                <a href="eventos.html" class="block py-2 text-gray-700">Eventos</a>
+                <a href="talleres.html" class="block py-2 text-gray-700">Talleres</a>
+                <a href="eventos.html" class="block py-2 text-purple-600">Tickets</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Success Message -->
+        <section class="py-16">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-check text-4xl text-green-600"></i>
+                    </div>
+                    <h1 class="text-3xl font-bold text-gray-900 mb-4">¡Compra Exitosa!</h1>
+                    <p class="text-xl text-gray-600">
+                        Gracias por tu compra. Te hemos enviado un correo con los detalles de tus tickets.
+                    </p>
+                </div>
+
+                <!-- Ticket Details -->
+                <div class="bg-white rounded-xl shadow-sm p-8 mb-8">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Detalles de la Compra</h2>
+                    
+                    <div class="space-y-6">
+                        <!-- Event Details -->
+                        <div class="border-b pb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Evento</h3>
+                            <p id="event-name" class="text-gray-600">Cargando...</p>
+                            <p id="event-date" class="text-gray-600">Cargando...</p>
+                        </div>
+
+                        <!-- Ticket Summary -->
+                        <div class="border-b pb-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Resumen de Tickets</h3>
+                            <div id="ticket-summary" class="space-y-3">
+                                <!-- Tickets will be added here dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- Order Details -->
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Detalles del Pedido</h3>
+                            <div class="space-y-2">
+                                <p class="text-gray-600">
+                                    <span class="font-medium">Número de Orden:</span>
+                                    <span id="order-number">Cargando...</span>
+                                </p>
+                                <p class="text-gray-600">
+                                    <span class="font-medium">Fecha de Compra:</span>
+                                    <span id="purchase-date">Cargando...</span>
+                                </p>
+                                <p class="text-gray-600">
+                                    <span class="font-medium">Total Pagado:</span>
+                                    <span id="total-amount" class="text-purple-600 font-bold">Cargando...</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next Steps -->
+                <div class="text-center space-y-6">
+                    <p class="text-gray-600">
+                        Presenta tu código QR o número de orden en la entrada del evento.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="index.html" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
+                            Volver al Inicio
+                        </a>
+                        <a href="eventos.html" class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50">
+                            Ver Más Eventos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="mb-4">
+                        <span class="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                            CulturalHub
+                        </span>
+                    </div>
+                    <p class="text-gray-400">El centro cultural más vibrante para jóvenes creativos</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Navegación</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="eventos.html" class="hover:text-white transition-colors">Eventos</a></li>
+                        <li><a href="talleres.html" class="hover:text-white transition-colors">Talleres</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Galería</a></li>
+                        <li><a href="eventos.html" class="hover:text-white transition-colors">Tickets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Información</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="sobre-nosotros.html" class="hover:text-white transition-colors">Sobre Nosotros</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contacto</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Accesibilidad</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Contacto</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <p>Av. Cultura 123</p>
+                        <p>Centro Histórico, CDMX</p>
+                        <p>Tel: (55) 1234-5678</p>
+                        <p>info@culturalhub.mx</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 CulturalHub. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const eventName = urlParams.get('event') || 'Evento CulturalHub';
+        const eventDate = urlParams.get('date') || 'Fecha por confirmar';
+        const totalPaid = parseFloat(urlParams.get('total') || '0');
+        const ticketDetails = JSON.parse(decodeURIComponent(urlParams.get('tickets') || '{}'));
+
+        // Calculate base price from total paid
+        let basePrice = 0;
+        let totalTickets = 0;
+        for (const [type, count] of Object.entries(ticketDetails)) {
+            if (count > 0) {
+                const multiplier = type === 'student' ? 0.8 : 
+                                 type === 'couple' ? 1.7 : 
+                                 1;
+                totalTickets += count * (type === 'couple' ? 2 : 1);
+                basePrice += count * multiplier;
+            }
+        }
+        basePrice = totalPaid / basePrice;
+
+        // Calculate total amount
+        let totalAmount = 0;
+        for (const [type, count] of Object.entries(ticketDetails)) {
+            if (count > 0) {
+                const price = type === 'student' ? basePrice * 0.8 : 
+                            type === 'couple' ? basePrice * 1.7 : 
+                            basePrice;
+                totalAmount += price * count;
+            }
+        }
+
+        // Update page content
+        document.getElementById('event-name').textContent = eventName;
+        document.getElementById('event-date').textContent = eventDate;
+        document.getElementById('total-amount').textContent = `$${totalAmount.toFixed(2)}`;
+        document.getElementById('order-number').textContent = `ORD-${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
+        document.getElementById('purchase-date').textContent = new Date().toLocaleDateString('es-ES', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+
+        // Update ticket summary
+        const ticketSummary = document.getElementById('ticket-summary');
+        for (const [type, count] of Object.entries(ticketDetails)) {
+            if (count > 0) {
+                const ticketType = {
+                    regular: 'Regular',
+                    student: 'Estudiante',
+                    couple: 'Pareja'
+                }[type];
+                
+                const div = document.createElement('div');
+                div.className = 'flex justify-between items-center';
+                div.innerHTML = `
+                    <span class="text-gray-600">${ticketType} x${count}</span>
+                `;
+                ticketSummary.appendChild(div);
+            }
+        }
+
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html> 

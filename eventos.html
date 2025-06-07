@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CulturalHub - Eventos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#faf5ff',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7c3aed'
+                        },
+                        secondary: {
+                            500: '#ec4899',
+                            600: '#db2777'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="js/main.js"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-sm border-b sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <span class="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                            CulturalHub
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-purple-600 transition-colors">Inicio</a>
+                    <a href="sobre-nosotros.html" class="text-gray-700 hover:text-purple-600 transition-colors">Sobre Nosotros</a>
+                    <a href="eventos.html" class="text-purple-600">Eventos</a>
+                    <a href="talleres.html" class="text-gray-700 hover:text-purple-600 transition-colors">Talleres</a>
+                </div>
+                <!-- Mobile menu button -->
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 py-2 space-y-2">
+                <a href="index.html" class="block py-2 text-gray-700">Inicio</a>
+                <a href="sobre-nosotros.html" class="block py-2 text-gray-700">Sobre Nosotros</a>
+                <a href="eventos.html" class="block py-2 text-purple-600">Eventos</a>
+                <a href="talleres.html" class="block py-2 text-gray-700">Talleres</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+         <!-- All Events -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">Todos los Eventos</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Event Cards -->
+                <div class="bg-white border border-gray-200 rounded-xl hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">Exposición</span>
+                            <span class="text-xl font-bold text-purple-600">$12</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Exposición: Fotografía Urbana</h3>
+                        <p class="text-sm text-gray-600 mb-4">Capturando la esencia de la ciudad a través del lente</p>
+                        <div class="space-y-2 text-sm text-gray-600 mb-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span>5 Mar • 17:00</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-users mr-2"></i>
+                                <span>28 disponibles</span>
+                            </div>
+                        </div>
+                        <a href="tickets.html?event=Exposición%20Fotografía%20Urbana&date=5%20de%20Marzo%202024%20-%2017:00&price=12" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all text-center block text-sm">
+                            Comprar Tickets
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-xl hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">Recital</span>
+                            <span class="text-xl font-bold text-purple-600">$10</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Noche de Poesía Experimental</h3>
+                        <p class="text-sm text-gray-600 mb-4">Poetas jóvenes presentan sus obras más innovadoras</p>
+                        <div class="space-y-2 text-sm text-gray-600 mb-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span>12 Mar • 19:30</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-users mr-2"></i>
+                                <span>15 disponibles</span>
+                            </div>
+                        </div>
+                        <a href="tickets.html?event=Noche%20de%20Poesía%20Experimental&date=12%20de%20Marzo%202024%20-%2019:30&price=10" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all text-center block text-sm">
+                            Comprar Tickets
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-xl hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">Instalación</span>
+                            <span class="text-xl font-bold text-purple-600">$25</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Instalación: Realidad Virtual</h3>
+                        <p class="text-sm text-gray-600 mb-4">Experimenta el arte a través de la tecnología VR</p>
+                        <div class="space-y-2 text-sm text-gray-600 mb-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span>18 Mar • 16:00</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-users mr-2"></i>
+                                <span>12 disponibles</span>
+                            </div>
+                        </div>
+                        <a href="tickets.html?event=Instalación%20Realidad%20Virtual&date=18%20de%20Marzo%202024%20-%2016:00&price=25" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all text-center block text-sm">
+                            Comprar Tickets
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-4">No Te Pierdas Ningún Evento</h2>
+            <p class="text-xl text-purple-100 mb-8">
+                Suscríbete a nuestro newsletter y recibe notificaciones de nuevos eventos y promociones especiales
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="Tu email" class="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:ring-2 focus:ring-white focus:border-transparent">
+                <button class="bg-white text-purple-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium transition-colors">
+                    Suscribirse
+                </button>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="mb-4">
+                        <span class="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                            CulturalHub
+                        </span>
+                    </div>
+                    <p class="text-gray-400">El centro cultural más vibrante para jóvenes creativos</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Navegación</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="eventos.html" class="hover:text-white transition-colors">Eventos</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Talleres</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Galería</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Tickets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Información</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="sobre-nosotros.html" class="hover:text-white transition-colors">Sobre Nosotros</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contacto</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Accesibilidad</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Contacto</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <p>Av. Cultura 123</p>
+                        <p>Centro Histórico, CDMX</p>
+                        <p>Tel: (55) 1234-5678</p>
+                        <p>info@culturalhub.mx</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 CulturalHub. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html> 
