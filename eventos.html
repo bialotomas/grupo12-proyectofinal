@@ -48,7 +48,7 @@
                     <a href="galeria.html" class="text-gray-700 hover:text-purple-600 transition-colors">Galería</a>
                 </div>
                 <!-- Mobile menu button -->
-                <button class="md:hidden" onclick="toggleMobileMenu()">
+                <button class="md:hidden mobile-menu-button">
                     <i class="fas fa-bars text-gray-700"></i>
                 </button>
             </div>
@@ -74,72 +74,78 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Event Cards -->
                 <div class="bg-white border border-gray-200 rounded-xl hover:shadow-lg transition-shadow duration-300 overflow-hidden">
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">Exposición</span>
-                            <span class="text-xl font-bold text-purple-600">$12</span>
-                        </div>
-                        <h3 class="text-lg font-semibold mb-2">Exposición: Fotografía Urbana</h3>
-                        <p class="text-sm text-gray-600 mb-4">Capturando la esencia de la ciudad a través del lente</p>
-                        <div class="space-y-2 text-sm text-gray-600 mb-4">
-                            <div class="flex items-center">
-                                <i class="fas fa-calendar mr-2"></i>
-                                <span>5 Mar • 17:00</span>
+                    <div class="p-6 flex flex-col h-full">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">Exposición</span>
+                                <span class="text-xl font-bold text-purple-600">$12</span>
                             </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-users mr-2"></i>
-                                <span>28 disponibles</span>
+                            <h3 class="text-lg font-semibold mb-2">Exposición: Fotografía Urbana</h3>
+                            <p class="text-sm text-gray-600 mb-4">Capturando la esencia de la ciudad a través del lente</p>
+                            <div class="space-y-2 text-sm text-gray-600 mb-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar mr-2"></i>
+                                    <span>5 Mar • 17:00</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-users mr-2"></i>
+                                    <span>28 disponibles</span>
+                                </div>
                             </div>
                         </div>
-                        <a href="tickets.html?event=Exposición%20Fotografía%20Urbana&date=5%20de%20Marzo%202024%20-%2017:00&price=12" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all text-center block text-sm">
+                        <a href="tickets.html?event=Exposición%20Fotografía%20Urbana&date=5%20de%20Marzo%202024%20-%2017:00&price=12" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all text-center block text-sm mt-auto">
                             Comprar Tickets
                         </a>
                     </div>
                 </div>
 
                 <div class="bg-white border border-gray-200 rounded-xl hover:shadow-lg transition-shadow duration-300 overflow-hidden">
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">Recital</span>
-                            <span class="text-xl font-bold text-purple-600">$10</span>
-                        </div>
-                        <h3 class="text-lg font-semibold mb-2">Noche de Poesía Experimental</h3>
-                        <p class="text-sm text-gray-600 mb-4">Poetas jóvenes presentan sus obras más innovadoras</p>
-                        <div class="space-y-2 text-sm text-gray-600 mb-4">
-                            <div class="flex items-center">
-                                <i class="fas fa-calendar mr-2"></i>
-                                <span>12 Mar • 19:30</span>
+                    <div class="p-6 flex flex-col h-full">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">Recital</span>
+                                <span class="text-xl font-bold text-purple-600">$10</span>
                             </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-users mr-2"></i>
-                                <span>15 disponibles</span>
+                            <h3 class="text-lg font-semibold mb-2">Noche de Poesía Experimental</h3>
+                            <p class="text-sm text-gray-600 mb-4">Poetas jóvenes presentan sus obras más innovadoras</p>
+                            <div class="space-y-2 text-sm text-gray-600 mb-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar mr-2"></i>
+                                    <span>12 Mar • 19:30</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-users mr-2"></i>
+                                    <span>15 disponibles</span>
+                                </div>
                             </div>
                         </div>
-                        <a href="tickets.html?event=Noche%20de%20Poesía%20Experimental&date=12%20de%20Marzo%202024%20-%2019:30&price=10" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all text-center block text-sm">
+                        <a href="tickets.html?event=Noche%20de%20Poesía%20Experimental&date=12%20de%20Marzo%202024%20-%2019:30&price=10" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all text-center block text-sm mt-auto">
                             Comprar Tickets
                         </a>
                     </div>
                 </div>
 
                 <div class="bg-white border border-gray-200 rounded-xl hover:shadow-lg transition-shadow duration-300 overflow-hidden">
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">Instalación</span>
-                            <span class="text-xl font-bold text-purple-600">$25</span>
-                        </div>
-                        <h3 class="text-lg font-semibold mb-2">Instalación: Realidad Virtual</h3>
-                        <p class="text-sm text-gray-600 mb-4">Experimenta el arte a través de la tecnología VR</p>
-                        <div class="space-y-2 text-sm text-gray-600 mb-4">
-                            <div class="flex items-center">
-                                <i class="fas fa-calendar mr-2"></i>
-                                <span>18 Mar • 16:00</span>
+                    <div class="p-6 flex flex-col h-full">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">Instalación</span>
+                                <span class="text-xl font-bold text-purple-600">$25</span>
                             </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-users mr-2"></i>
-                                <span>12 disponibles</span>
+                            <h3 class="text-lg font-semibold mb-2">Instalación: Realidad Virtual</h3>
+                            <p class="text-sm text-gray-600 mb-4">Experimenta el arte a través de la tecnología VR</p>
+                            <div class="space-y-2 text-sm text-gray-600 mb-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar mr-2"></i>
+                                    <span>18 Mar • 16:00</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-users mr-2"></i>
+                                    <span>12 disponibles</span>
+                                </div>
                             </div>
                         </div>
-                        <a href="tickets.html?event=Instalación%20Realidad%20Virtual&date=18%20de%20Marzo%202024%20-%2016:00&price=25" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all text-center block text-sm">
+                        <a href="tickets.html?event=Instalación%20Realidad%20Virtual&date=18%20de%20Marzo%202024%20-%2016:00&price=25" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all text-center block text-sm mt-auto">
                             Comprar Tickets
                         </a>
                     </div>
@@ -182,18 +188,17 @@
                     <h3 class="font-semibold mb-4">Navegación</h3>
                     <ul class="space-y-2 text-gray-400">
                         <li><a href="eventos.html" class="hover:text-white transition-colors">Eventos</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Talleres</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Galería</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Tickets</a></li>
+                        <li><a href="talleres.html" class="hover:text-white transition-colors">Talleres</a></li>
+                        <li><a href="galeria.html" class="hover:text-white transition-colors">Galería</a></li>
+                        <li><a href="tickets.html" class="hover:text-white transition-colors">Tickets</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="font-semibold mb-4">Información</h3>
                     <ul class="space-y-2 text-gray-400">
                         <li><a href="sobre-nosotros.html" class="hover:text-white transition-colors">Sobre Nosotros</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Contacto</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Accesibilidad</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="contacto.html" class="hover:text-white transition-colors">Contacto</a></li>
+                        <li><a href="contacto.html#faq" class="hover:text-white transition-colors">FAQ</a></li>
                     </ul>
                 </div>
                 <div>
@@ -211,12 +216,5 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        }
-    </script>
 </body>
 </html> 
