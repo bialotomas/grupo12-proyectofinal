@@ -85,8 +85,8 @@
                 <h2 class="text-2xl font-bold text-gray-900 mb-8">Talleres Destacados</h2>
                 <div class="grid lg:grid-cols-2 gap-8 mb-12">
                     <!-- Featured Workshop 1 -->
-                    <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
-                        <div class="p-6">
+                    <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden h-full flex flex-col">
+                        <div class="p-6 flex flex-col h-full">
                             <div class="flex justify-between items-start mb-4">
                                 <div class="flex items-center space-x-2">
                                     <i class="fas fa-camera text-purple-600"></i>
@@ -149,16 +149,17 @@
                                     <span class="border border-gray-300 text-gray-700 px-2 py-1 rounded text-xs">+1 más</span>
                                 </div>
                             </div>
-
-                            <button onclick="enrollWorkshop()" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all">
-                                Inscribirse Ahora
-                            </button>
+                            <div class="mt-auto">
+                                <button onclick="enrollWorkshop()" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all">
+                                    Inscribirse Ahora
+                                </button>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Featured Workshop 2 -->
-                    <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
-                        <div class="p-6">
+                    <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden h-full flex flex-col">
+                        <div class="p-6 flex flex-col h-full">
                             <div class="flex justify-between items-start mb-4">
                                 <div class="flex items-center space-x-2">
                                     <i class="fas fa-palette text-purple-600"></i>
@@ -221,10 +222,11 @@
                                     <span class="border border-gray-300 text-gray-700 px-2 py-1 rounded text-xs">+1 más</span>
                                 </div>
                             </div>
-
-                            <button onclick="enrollWorkshop()" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all">
-                                Inscribirse Ahora
-                            </button>
+                            <div class="mt-auto">
+                                <button onclick="enrollWorkshop()" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all">
+                                    Inscribirse Ahora
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -524,6 +526,13 @@
                         <h3 class="text-xl font-semibold mb-2">Certificación</h3>
                         <p class="text-purple-100">Recibe un certificado al completar exitosamente el taller</p>
                     </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-universal-access text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Accesibilidad</h3>
+                        <p class="text-purple-100">Instalaciones completamente accesibles con rampas y baños adaptados</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -595,9 +604,9 @@
                     <h3 class="font-semibold mb-4">Contacto</h3>
                     <div class="space-y-2 text-gray-400">
                         <p>Av. Cultura 123</p>
-                        <p>Centro Histórico, CDMX</p>
+                        <p>Centro Histórico, AR</p>
                         <p>Tel: (55) 1234-5678</p>
-                        <p>info@culturalhub.mx</p>
+                        <p>info@culturalhub.ar</p>
                     </div>
                 </div>
             </div>
