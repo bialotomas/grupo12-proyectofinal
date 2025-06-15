@@ -1,71 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CulturalHub - Eventos</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#faf5ff',
-                            500: '#a855f7',
-                            600: '#9333ea',
-                            700: '#7c3aed'
-                        },
-                        secondary: {
-                            500: '#ec4899',
-                            600: '#db2777'
-                        }
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: "#faf5ff",
+                500: "#a855f7",
+                600: "#9333ea",
+                700: "#7c3aed",
+              },
+              secondary: {
+                500: "#ec4899",
+                600: "#db2777",
+              },
+            },
+          },
+        },
+      };
     </script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
     <script src="js/main.js"></script>
-</head>
-<body class="bg-gray-50">
+  </head>
+  <body class="bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white/95 backdrop-blur-sm border-b sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-2">
-                    <a href="index.html" class="flex items-center space-x-2">
-                        <span class="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                            CulturalHub
-                        </span>
-                    </a>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-purple-600 transition-colors">Inicio</a>
-                    <a href="sobre-nosotros.html" class="text-gray-700 hover:text-purple-600 transition-colors">Sobre Nosotros</a>
-                    <a href="eventos.html" class="text-purple-600">Eventos</a>
-                    <a href="talleres.html" class="text-gray-700 hover:text-purple-600 transition-colors">Talleres</a>
-                    <a href="galeria.html" class="text-gray-700 hover:text-purple-600 transition-colors">Galería</a>
-                    <a href="contacto.html" class="text-gray-700 hover:text-purple-600 transition-colors">Contacto</a>
-                </div>
-                <a href="eventos.html" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg transition-all">Comprar Tickets</a>
-                <!-- Mobile menu button -->
-                <button class="md:hidden mobile-menu-button">
-                    <i class="fas fa-bars text-gray-700"></i>
-                </button>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center space-x-2">
+            <a href="index.html" class="flex items-center space-x-2">
+              <span
+                class="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
+              >
+                CulturalHub
+              </span>
+            </a>
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="index.html"
+              class="text-gray-700 hover:text-purple-600 transition-colors"
+              >Inicio</a
+            >
+            <a
+              href="sobre-nosotros.html"
+              class="text-gray-700 hover:text-purple-600 transition-colors"
+              >Sobre Nosotros</a
+            >
+            <a href="#" class="text-purple-600 font-semibold">Eventos</a>
+            <a
+              href="talleres.html"
+              class="text-gray-700 hover:text-purple-600 transition-colors"
+              >Talleres</a
+            >
+            <a
+              href="galeria.html"
+              class="text-gray-700 hover:text-purple-600 transition-colors"
+              >Galería</a
+            >
+            <a
+              href="contacto.html"
+              class="text-gray-700 hover:text-purple-600 transition-colors"
+              >Contacto</a
+            >
+            <a
+              href="servicios.html"
+              class="text-gray-700 hover:text-purple-600 transition-colors"
+              >Servicios</a
+            >
+          </div>
+          <a
+            href="#"
+            class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg transition-all"
+          >
+            Comprar Tickets
+          </a>
+          <!-- Mobile menu button -->
+          <button class="md:hidden mobile-menu-button">
+            <i class="fas fa-bars text-gray-700"></i>
+          </button>
         </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-4 py-2 space-y-2">
-                <a href="index.html" class="block py-2 text-gray-700">Inicio</a>
-                <a href="sobre-nosotros.html" class="block py-2 text-gray-700">Sobre Nosotros</a>
-                <a href="eventos.html" class="block py-2 text-purple-600">Eventos</a>
-                <a href="talleres.html" class="block py-2 text-gray-700">Talleres</a>
-                <a href="galeria.html" class="block py-2 text-gray-700">Galería</a>
-                <a href="contacto.html" class="block py-2 text-gray-700">Contacto</a>
-            </div>
+      </div>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <div class="px-4 py-2 space-y-2">
+          <a href="index.html" class="block py-2 text-gray-700">Inicio</a>
+          <a href="sobre-nosotros.html" class="block py-2 text-gray-700">Sobre Nosotros</a>
+          <a href="eventos.html" class="block py-2 text-purple-600 font-semibold">Eventos</a>
+          <a href="talleres.html" class="block py-2 text-gray-700">Talleres</a>
+          <a href="galeria.html" class="block py-2 text-gray-700">Galería</a>
+          <a href="contacto.html" class="block py-2 text-gray-700">Contacto</a>
+          <a href="servicios.html" class="block py-2 text-gray-700">Servicios</a>
         </div>
+      </div>
     </nav>
 
     <!-- Main Content -->
@@ -81,7 +117,7 @@
               <!-- Calendar -->
               <div class="bg-gray-50 rounded-lg p-3 max-w-md">
                 <div class="text-center mb-2">
-                  <h3 class="text-base font-semibold">Junio 2025</h3>
+                  <h3 class="text-base font-semibold">Julio 2025</h3>
                 </div>
                 <div class="grid grid-cols-7 gap-1 text-center mb-1">
                   <div class="text-xs font-medium text-gray-500">Dom</div>
@@ -93,168 +129,51 @@
                   <div class="text-xs font-medium text-gray-500">Sáb</div>
                 </div>
                 <div class="grid grid-cols-7 gap-1">
-                  <!-- Semana 1 -->
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    1
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    2
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    3
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    4
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs bg-purple-100 text-purple-600 rounded"
-                  >
-                    5
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    6
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    7
-                  </div>
+                  <!-- Semana 1 (Julio 2025 empieza en martes) -->
+                  <div class="aspect-square flex items-center justify-center text-xs"></div>
+                  <div class="aspect-square flex items-center justify-center text-xs"></div>
+                  <div class="aspect-square flex items-center justify-center text-xs">1</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">2</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">3</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">4</div>
+                  <div class="aspect-square flex items-center justify-center text-xs bg-purple-100 text-purple-600 rounded">5</div>
                   <!-- Semana 2 -->
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    8
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    9
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    10
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    11
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs bg-purple-100 text-purple-600 rounded"
-                  >
-                    12
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    13
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    14
-                  </div>
+                  <div class="aspect-square flex items-center justify-center text-xs">6</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">7</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">8</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">9</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">10</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">11</div>
+                  <div class="aspect-square flex items-center justify-center text-xs bg-purple-100 text-purple-600 rounded">12</div>
                   <!-- Semana 3 -->
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    15
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    16
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    17
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs bg-purple-100 text-purple-600 rounded"
-                  >
-                    18
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    19
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    20
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    21
-                  </div>
+                  <div class="aspect-square flex items-center justify-center text-xs">13</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">14</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">15</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">16</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">17</div>
+                  <div class="aspect-square flex items-center justify-center text-xs bg-purple-100 text-purple-600 rounded">18</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">19</div>
                   <!-- Semana 4 -->
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    22
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    23
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    24
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    25
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    26
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    27
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    28
-                  </div>
+                  <div class="aspect-square flex items-center justify-center text-xs">20</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">21</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">22</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">23</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">24</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">25</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">26</div>
                   <!-- Semana 5 -->
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    29
-                  </div>
-                  <div
-                    class="aspect-square flex items-center justify-center text-xs"
-                  >
-                    30
-                  </div>
+                  <div class="aspect-square flex items-center justify-center text-xs">27</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">28</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">29</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">30</div>
+                  <div class="aspect-square flex items-center justify-center text-xs">31</div>
                 </div>
               </div>
 
               <!-- Eventos del mes -->
               <div>
                 <h3 class="text-lg font-semibold mb-4">
-                  Eventos Destacados de Junio
+                  Eventos Destacados de Julio
                 </h3>
                 <div class="space-y-4">
                   <div class="flex items-start space-x-4">
@@ -322,7 +241,7 @@
                       class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
                       >Exposición</span
                     >
-                    <span class="text-xl font-bold text-purple-600">$12</span>
+                    <span class="text-2xl font-bold text-purple-600">$8.500</span>
                   </div>
                   <h3 class="text-lg font-semibold mb-2">
                     Exposición de Fotografía Urbana
@@ -333,7 +252,7 @@
                   <div class="space-y-2 text-sm text-gray-600 mb-4">
                     <div class="flex items-center">
                       <i class="fas fa-calendar mr-2"></i>
-                      <span>5 Jun • 17:00</span>
+                      <span>5 Jul • 17:00</span>
                     </div>
                     <div class="flex items-center">
                       <i class="fas fa-users mr-2"></i>
@@ -342,7 +261,7 @@
                   </div>
                 </div>
                 <a
-                  href="tickets.html?event=Exposición%20Fotografía%20Urbana&date=5%20de%20Marzo%202024%20-%2017:00&price=12"
+                  href="tickets.html?event=Exposición%20Fotografía%20Urbana&date=5%20Jul%20•%2017:00"
                   class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all text-center block text-sm mt-auto"
                 >
                   Comprar Tickets
@@ -360,7 +279,7 @@
                       class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
                       >Recital</span
                     >
-                    <span class="text-xl font-bold text-purple-600">$10</span>
+                    <span class="text-2xl font-bold text-purple-600">$12.000</span>
                   </div>
                   <h3 class="text-lg font-semibold mb-2">
                     Noche de Poesía Experimental
@@ -371,7 +290,7 @@
                   <div class="space-y-2 text-sm text-gray-600 mb-4">
                     <div class="flex items-center">
                       <i class="fas fa-calendar mr-2"></i>
-                      <span>12 Jun • 19:30</span>
+                      <span>12 Jul • 19:30</span>
                     </div>
                     <div class="flex items-center">
                       <i class="fas fa-users mr-2"></i>
@@ -380,7 +299,7 @@
                   </div>
                 </div>
                 <a
-                  href="tickets.html?event=Noche%20de%20Poesía%20Experimental&date=12%20de%20Marzo%202024%20-%2019:30&price=10"
+                  href="tickets.html?event=Noche%20de%20Poesía%20Experimental&date=12%20Jul%20•%2019:30"
                   class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all text-center block text-sm mt-auto"
                 >
                   Comprar Tickets
@@ -398,7 +317,7 @@
                       class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
                       >Instalación</span
                     >
-                    <span class="text-xl font-bold text-purple-600">$25</span>
+                    <span class="text-2xl font-bold text-purple-600">$10.000</span>
                   </div>
                   <h3 class="text-lg font-semibold mb-2">Realidad Virtual</h3>
                   <p class="text-sm text-gray-600 mb-4">
@@ -407,7 +326,7 @@
                   <div class="space-y-2 text-sm text-gray-600 mb-4">
                     <div class="flex items-center">
                       <i class="fas fa-calendar mr-2"></i>
-                      <span>18 Jun • 16:00</span>
+                      <span>18 Jul • 16:00</span>
                     </div>
                     <div class="flex items-center">
                       <i class="fas fa-users mr-2"></i>
@@ -416,7 +335,7 @@
                   </div>
                 </div>
                 <a
-                  href="tickets.html?event=Instalación%20Realidad%20Virtual&date=18%20de%20Marzo%202024%20-%2016:00&price=25"
+                  href="tickets.html?event=Realidad%20Virtual&date=18%20Jul%20•%2016:00"
                   class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all text-center block text-sm mt-auto"
                 >
                   Comprar Tickets
@@ -439,11 +358,13 @@
           </p>
           <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input
+              id="newsletter-email"
               type="email"
               placeholder="Tu email"
               class="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:ring-2 focus:ring-white focus:border-transparent"
             />
             <button
+              id="newsletter-btn"
               class="bg-white text-purple-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium transition-colors"
             >
               Suscribirse
@@ -453,49 +374,115 @@
       </section>
     </main>
 
-
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <div class="mb-4">
-                        <span class="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                            CulturalHub
-                        </span>
-                    </div>
-                    <p class="text-gray-400">El centro cultural más vibrante para jóvenes creativos</p>
-                </div>
-                <div>
-                    <h3 class="font-semibold mb-4">Navegación</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="eventos.html" class="hover:text-white transition-colors">Eventos</a></li>
-                        <li><a href="talleres.html" class="hover:text-white transition-colors">Talleres</a></li>
-                        <li><a href="galeria.html" class="hover:text-white transition-colors">Galería</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-semibold mb-4">Información</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="sobre-nosotros.html" class="hover:text-white transition-colors">Sobre Nosotros</a></li>
-                        <li><a href="contacto.html" class="hover:text-white transition-colors">Contacto</a></li>
-                        <li><a href="contacto.html#faq" class="hover:text-white transition-colors">FAQ</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-semibold mb-4">Contacto</h3>
-                    <div class="space-y-2 text-gray-400">
-                        <p>Av. Cultura 123</p>
-                        <p>Centro Histórico, AR</p>
-                        <p>Tel: (55) 1234-5678</p>
-                        <p>info@culturalhub.ar</p>
-                    </div>
-                </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <div class="mb-4">
+              <span
+                class="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
+              >
+                CulturalHub
+              </span>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 CulturalHub. Todos los derechos reservados.</p>
+            <p class="text-gray-400">
+              El centro cultural más vibrante para jóvenes creativos
+            </p>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Navegación</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a
+                  href="eventos.html"
+                  class="hover:text-white transition-colors"
+                  >Eventos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="talleres.html"
+                  class="hover:text-white transition-colors"
+                  >Talleres</a
+                >
+              </li>
+              <li>
+                <a
+                  href="galeria.html"
+                  class="hover:text-white transition-colors"
+                  >Galería</a
+                >
+              </li>
+              <li>
+                <a
+                  href="servicios.html"
+                  class="hover:text-white transition-colors"
+                  >Servicios</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Información</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a
+                  href="sobre-nosotros.html"
+                  class="hover:text-white transition-colors"
+                  >Sobre Nosotros</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contacto.html"
+                  class="hover:text-white transition-colors"
+                  >Contacto</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contacto.html#faq"
+                  class="hover:text-white transition-colors"
+                  >FAQ</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Contacto</h3>
+            <div class="space-y-2 text-gray-400">
+              <p>Av. Cultura 123</p>
+              <p>Centro Histórico, AR</p>
+              <p>Tel: (55) 1234-5678</p>
+              <p>info@culturalhub.ar</p>
             </div>
+          </div>
         </div>
+        <div
+          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2025 CulturalHub. Todos los derechos reservados.</p>
+        </div>
+      </div>
     </footer>
-</body>
-</html> 
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.getElementById('newsletter-btn');
+        const emailInput = document.getElementById('newsletter-email');
+        if (btn && emailInput) {
+          btn.addEventListener('click', function() {
+            const email = emailInput.value.trim();
+            if (email === "") {
+              alert("Por favor, ingresa tu email.");
+            } else {
+              alert("¡Te has suscrito exitosamente!");
+              emailInput.value = "";
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
