@@ -33,8 +33,52 @@
     <script>
       function handleSubmit(event) {
         event.preventDefault();
-        // Aquí normalmente enviarías los datos del formulario a un servidor
+        
+        // Obtener los valores del formulario
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value.trim();
+        const message = document.getElementById('message').value.trim();
+        
+        // Validar campos
+        let isValid = true;
+        let errorMessage = '';
+        
+        if (!name) {
+          errorMessage += 'El nombre es obligatorio\n';
+          isValid = false;
+        }
+        
+        if (!email) {
+          errorMessage += 'El correo electrónico es obligatorio\n';
+          isValid = false;
+        } else if (!isValidEmail(email)) {
+          errorMessage += 'El correo electrónico no es válido\n';
+          isValid = false;
+        }
+        
+        if (!subject) {
+          errorMessage += 'El asunto es obligatorio\n';
+          isValid = false;
+        }
+        
+        if (!message) {
+          errorMessage += 'El mensaje es obligatorio\n';
+          isValid = false;
+        }
+        
+        if (!isValid) {
+          alert(errorMessage);
+          return;
+        }
+        
+        // Si todo es válido, mostrar el modal de confirmación
         document.getElementById("confirmationModal").classList.remove("hidden");
+      }
+      
+      function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
       }
 
       function closeModal() {
@@ -225,6 +269,7 @@
                   type="text"
                   id="name"
                   name="name"
+                  required
                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                 />
               </div>
@@ -238,6 +283,7 @@
                   type="email"
                   id="email"
                   name="email"
+                  required
                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                 />
               </div>
@@ -251,6 +297,7 @@
                   type="text"
                   id="subject"
                   name="subject"
+                  required
                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                 />
               </div>
@@ -264,6 +311,7 @@
                   id="message"
                   name="message"
                   rows="4"
+                  required
                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                 ></textarea>
               </div>
