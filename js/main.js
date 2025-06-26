@@ -191,4 +191,12 @@ document.addEventListener('DOMContentLoaded', function() {
     } catch (error) {
         console.warn('Error en la inicialización:', error);
     }
-}); 
+});
+
+// Función global para el menú hamburguesa
+window.toggleMobileMenu = function() {
+  var menu = document.getElementById('mobile-menu');
+  if (menu) {
+    menu.classList.toggle('hidden');
+  }
+}; 
