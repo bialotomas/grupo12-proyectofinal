@@ -256,25 +256,7 @@
                     <label
                       class="flex items-center space-x-3 p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50"
                     >
-                      <input
-                        type="radio"
-                        name="payment"
-                        value="credit"
-                        class="text-purple-600 focus:ring-purple-500"
-                        checked
-                      />
                       <span>Tarjeta de Crédito/Débito</span>
-                    </label>
-                    <label
-                      class="flex items-center space-x-3 p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50"
-                    >
-                      <input
-                        type="radio"
-                        name="payment"
-                        value="transfer"
-                        class="text-purple-600 focus:ring-purple-500"
-                      />
-                      <span>Transferencia Bancaria</span>
                     </label>
                   </div>
                 </div>
@@ -564,7 +546,6 @@
           // Obtener valores del formulario
           const name = document.getElementById('name').value.trim();
           const email = document.getElementById('email').value.trim();
-          const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
           const cardNumber = document.getElementById('card-number').value.trim();
           const expiry = document.getElementById('expiry').value.trim();
           const cvv = document.getElementById('cvv').value.trim();
@@ -600,22 +581,20 @@
             return;
           }
 
-          // Validar método de pago
-          if (paymentMethod === "credit") {
-            if (!cardNumber || !isValidCardNumber(cardNumber)) {
-              alert('Por favor, ingresa un número de tarjeta válido.');
-              return;
-            }
+          // Validar datos de tarjeta (siempre requerido)
+          if (!cardNumber || !isValidCardNumber(cardNumber)) {
+            alert('Por favor, ingresa un número de tarjeta válido.');
+            return;
+          }
 
-            if (!expiry || !isValidExpiry(expiry)) {
-              alert('Por favor, ingresa una fecha de expiración válida (MM/AA).');
-              return;
-            }
+          if (!expiry || !isValidExpiry(expiry)) {
+            alert('Por favor, ingresa una fecha de expiración válida (MM/AA).');
+            return;
+          }
 
-            if (!cvv || !isValidCVV(cvv)) {
-              alert('Por favor, ingresa un CVV válido.');
-              return;
-            }
+          if (!cvv || !isValidCVV(cvv)) {
+            alert('Por favor, ingresa un CVV válido.');
+            return;
           }
 
           // Si todo es válido, procesar la compra
@@ -642,12 +621,12 @@
           }, 2000);
         });
 
-      // Mostrar/ocultar campos de tarjeta según método de pago
-      document.querySelectorAll('input[name="payment"]').forEach(radio => {
-        radio.addEventListener('change', function() {
-          const creditCardDetails = document.getElementById('credit-card-details');
-          creditCardDetails.style.display = this.value === 'credit' ? 'block' : 'none';
-        });
+      // Mostrar siempre los campos de tarjeta
+      document.addEventListener('DOMContentLoaded', function() {
+        const creditCardDetails = document.getElementById('credit-card-details');
+        if (creditCardDetails) {
+          creditCardDetails.style.display = 'block';
+        }
       });
 
       // Mostrar/ocultar campo de credencial de estudiante
